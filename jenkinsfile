@@ -12,8 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                // Add your build command here (e.g., Maven, Gradle)
-                sh 'echo "Building the project..."' // Replace with actual build command
+              
             }
         }
 
