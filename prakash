@@ -8,7 +8,7 @@ pipeline {
              }
              stage ('Confirmation') {
                steps {
-                input ('Do you wanna continue?')
+              echo 'Do you wanna continue with me'
                 }
              }
              stage ('Done') {
