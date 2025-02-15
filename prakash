@@ -16,5 +16,10 @@ pipeline {
                 echo 'Bye Prakash'
                 }
              }
+stage ('Done1') {
+               steps {
+                echo 'Bye Prakash'
+                }
+             }
           }
       }
