@@ -15,7 +15,18 @@ pipeline {
               
             }
         }
-
+        stage('testing') {
+            steps {
+                input('do you want to continue':)
+              
+            }
+        }
+        stage('Done') {
+            steps {
+                echo 'thanks'
+              
+            }
+        }
        
     }
 }
