@@ -17,29 +17,6 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-                // Add your test command here
-                sh 'echo "Running tests..."' // Replace with actual test command
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying the application...'
-                // Add your deployment command here
-                sh 'echo "Deploying the project..."' // Replace with actual deployment command
-            }
-        }
-    }
-
-    post {
-        success {
-            echo 'Pipeline completed successfully!'
-        }
-        failure {
-            echo 'Pipeline failed!'
-        }
+       
     }
 }
