@@ -27,6 +27,16 @@ pipeline {
               
             }
         }
+     post {
+        success {
+            echo 'Build was successful!'
+            // Send success email or notification
+        }
+        failure {
+            echo 'Build failed!'
+            // Send failure email or notification
        
     }
+}
+
 }
