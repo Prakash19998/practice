@@ -1,0 +1,47 @@
+pipeline {
+    agent any // This specifies that the pipeline will run on any available agent
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Checking out the code from the repository...'
+            
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building the project...'
+                // Add build steps here
+            }
+        }
+
+        stage('Testing') {
+            steps {
+                input 'Do you want to continue?' // Add a user prompt for continuation
+            }
+        }
+
+        stage('Done') {
+            steps {
+                echo 'Thanks'
+                // Add any post-processing steps here
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Build was successful!'
+            // Send success email or notification
+        }
+        failure {
+            echo 'Build failed!'
+            // Send failure email or notification
+        }
+        always {
+            echo 'This will always run, no matter the result.'
+            // You can perform cleanup tasks here
+        }
+    }
+}
