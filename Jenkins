@@ -32,8 +32,12 @@ pipeline {
 
     post {
         success {
-            echo 'Build was successful!'
-            // Send success email or notification
+          emailext (
+                subject: "Build Success: ${currentBuild.fullDisplayName}",
+                body: "The Jenkins build ${currentBuild.fullDisplayName} was successful.\n\nCheck it out at ${env.BUILD_URL}",
+                to: "stephenprakash136@gmail.com"  // Replace with your recipient's email
+            )
+    
         }
         failure {
             echo 'Build failed!'
