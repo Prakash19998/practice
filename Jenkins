@@ -43,9 +43,6 @@ pipeline {
             echo 'Build failed!'
             // Send failure email or notification
         }
-        always {
-            echo 'This will always run, no matter the result.'
-            // You can perform cleanup tasks here
-        }
+        
     }
 }
