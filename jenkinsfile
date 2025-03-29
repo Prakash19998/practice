@@ -5,29 +5,32 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out the code from the repository...'
-                checkout scm // This checks out the code from the configured repository
+            
             }
         }
 
         stage('Build') {
             steps {
                 echo 'Building the project...'
-              
+                // Add build steps here
             }
         }
-        stage('testing') {
+
+        stage('Testing') {
             steps {
-                input ('do you want to continue?')
-              
+                input 'Do you want to continue?' // Add a user prompt for continuation
             }
         }
+
         stage('Done') {
             steps {
-                echo 'thanks'
-              
+                echo 'Thanks'
+                // Add any post-processing steps here
             }
         }
-     post {
+    }
+
+    post {
         success {
             echo 'Build was successful!'
             // Send success email or notification
@@ -35,8 +38,10 @@ pipeline {
         failure {
             echo 'Build failed!'
             // Send failure email or notification
-       
+        }
+        always {
+            echo 'This will always run, no matter the result.'
+            // You can perform cleanup tasks here
+        }
     }
-}
-
 }
